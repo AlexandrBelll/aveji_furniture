@@ -1,0 +1,39 @@
+.reviews {
+    margin-bottom: 7.5rem;
+    @media screen and (width < 968px) {
+        margin-bottom: 3rem;
+    }
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+    }
+}
+
+.review {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid var(--black);
+    padding: 2.5rem;
+    flex: 1 1 32%;
+    @media screen and (width < 776px) {
+        flex: 1 1 100%;
+    }
+    &__icon {
+        margin-bottom: 2rem;;
+    }
+
+    &__title {
+        margin-bottom: 1.25rem;
+    }
+
+    // &__text {
+    // }
+}
+

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+    font-family: "Helvetica";
+    src: local("Helvetica"),
+      local("Helvetica"),
+      url("/fonts/Helvetica.woff2") format("woff2"),
+      url("/fonts/Helvetica.woff") format("woff"),
+      url("/fonts/Helvetica.svg") format("svg");
+    font-weight: normal;
+  }
+
+
+:root {
+    --black: #212529;
+    --white: #fff;
+    --cream: #DDD7C0;
+    --red: #E13A3A;
+    --orange: #F9C67B;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100%;
+    overflow-x: hidden;
+    color: var(--black);
+    display: flex;
+    flex-flow: column nowrap;
+    line-height: 1.4rem;
+}
+
+.container {
+    max-width: 1376px;
+    margin: 0 auto;
+    @media (width < 1406px) {
+        width: 94%
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.title-h1 {
+    font-family: "Helvetica", sans-serif;
+    font-size: clamp(2rem, 1.242rem + 3.79vw, 4.5rem);
+    font-weight: normal;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.title-h2 {
+    font-family: "Helvetica", sans-serif;
+    font-size: clamp(1.75rem, 1.242rem + 3.79vw, 3rem);
+    font-weight: normal;
+    line-height: 138%;
+}
+
+.title-h3 {
+    font-family: "Helvetica", sans-serif;
+    font-size: clamp(1.5rem, 1.242rem + 3.79vw, 2.25rem);
+    font-weight: normal;
+    line-height: 138%;
+}
+
+.link {
+    color: var(--black);
+    cursor: pointer;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: var(--black);
+        transform: scaleX(0);
+        transform-origin: right bottom;
+        transition: transform 0.5s;
+    }
+    &:hover::before {
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: left bottom;
+    }
+}
+
+.btn {
+    background: var(--black);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    color: var(--white);
+    transition: 0.3s;
+    &:hover {
+        background: var(--cream);
+        color: var(--black);
+    }
+}
+
+

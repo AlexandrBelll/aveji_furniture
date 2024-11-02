@@ -1,0 +1,76 @@
+.projects {
+    margin-bottom: 7.5rem;
+    @media screen and (width < 968px) {
+        margin-bottom: 3rem;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 20px;
+        @media screen and (width < 700px) {
+            flex-flow: row nowrap;
+            overflow:auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 1.25rem;
+        }
+    }
+}
+
+.projects-card {
+    flex: 1 1 32%;
+    max-height: 580px;
+    overflow: hidden;
+    position: relative;
+    @media screen and (width < 700px) {
+        flex: 1 0 auto;
+        max-width: 252px;
+        max-height: 328px;
+        scroll-snap-align: center;
+    }
+    
+    &:hover > &__description {
+        bottom: 0;
+        left: 0;
+        transition: 0.3s;
+    }
+    &:hover > &__img {
+        transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+        transition: 0.3s;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+    }
+    &__description {
+        color: var(--white);
+        padding: 1.375rem 1.25rem;
+        background: #21252980;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        transition: 0.3s;
+        @media screen and (width < 700px) {
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &__link {
+        position: absolute;
+        inset: 0;
+    }
+}

@@ -1,0 +1,124 @@
+.header {
+    padding-bottom: 40px;
+    &__logo {
+        position: static;
+    }
+    &__burger:checked ~ &__nav {
+        @media (width < 800px) {
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: #000000a5;
+            z-index: 99;
+        }  
+    }
+    &__burger:checked ~ &__nav .menu {
+        @media (width < 800px) {
+            position: fixed;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 2rem;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 19rem;
+            background: #ECECEC;
+            z-index: 100;
+            padding: 20px 15px;
+            font-size: 1.5rem;
+            line-height: 33px;
+            &::before {
+                position: relative;
+                content: url(../img/logo.svg);
+                top: -8px;
+                left: -8px;
+            }
+        }  
+    }
+    &__nav {
+        display: none;
+        transition: 0.3s;
+        @media (width > 800px) {
+            display: block;
+            margin-left: 40%;
+        }    
+    }
+    
+    &__tel {
+        display: none;
+        @media (width > 800px) {
+            display: block;
+            color: var(--black);
+            position: static;
+        }
+    }
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px ;
+}
+
+
+.menu {
+    &__item {
+        display: block;
+        margin-bottom: 0.5rem;
+    }  
+}
+
+.menu-socials {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    @media  (width > 800px) {
+        display: none;
+    }       
+}
+
+.burger {
+    position: fixed;
+    right: 3%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6px;
+    align-items: end;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: var(--white);
+    border-radius: 50%;
+    z-index: 101;
+    @media (width > 800px) {
+        display: none;
+    }
+    
+    &__line {
+        transition: 0.3s;
+        background: #000;
+        width: 24px;
+        height: 1px;
+        &:last-child {
+            width: 14px;
+        }
+    }
+}
+
+.burger-checkbox {
+    display: none;
+    &:checked + .burger :nth-child(1) {
+        rotate: -45deg;
+        translate: 0px 7px;
+    }
+    
+    &:checked + .burger :nth-child(2) {
+        rotate: 45deg;
+    }
+    
+    &:checked + .burger :nth-child(3) {
+        opacity: 0;
+    }
+}
